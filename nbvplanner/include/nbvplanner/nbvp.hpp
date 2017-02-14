@@ -152,14 +152,14 @@ void nbvInspection::nbvPlanner<stateVec>::odomCallback(
     const nav_msgs::Odometry& pose)
 {
   tree_->setStateFromOdometryMsg(pose);
-  // Planner is now ready to plan.
+  // Planner is now ready to plan. 
   ready_ = true;
 }
 
 template<typename stateVec>
 bool nbvInspection::nbvPlanner<stateVec>::plannerCallback(nbvplanner::nbvp_srv::Request& req,
                                                           nbvplanner::nbvp_srv::Response& res)
-{
+{ 
   ros::Time computationTime = ros::Time::now();
   // Check that planner is ready to compute path.
   if (!ros::ok()) {
@@ -220,7 +220,7 @@ bool nbvInspection::nbvPlanner<stateVec>::plannerCallback(nbvplanner::nbvp_srv::
 
 template<typename stateVec>
 bool nbvInspection::nbvPlanner<stateVec>::setParams()
-{
+{ 
   std::string ns = ros::this_node::getName();
   bool ret = true;
   params_.v_max_ = 0.25;
